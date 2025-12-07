@@ -1,0 +1,83 @@
+{
+  "header": {
+    "logo": "Blueway",
+    "nav": ["About Us", "Products", "Affiliates", "Performances", "Contact Us"]
+  },
+  "hero": {
+    "title": "Blueway Co., Ltd.",
+    "quote": "We will grow into a global company that prioritizes customer satisfaction.",
+    "subtitle": "Plant Piping Fabrications & Instrumentation"
+  },
+  "tabs": {
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact Us"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Providing the best service, BLUEWAY Co. is always with you."
+  },
+  "ceo": {
+    "title": "CEO Message",
+    "p1": "Backed by 20+ years experience in procurement business for major plants around the globe,",
+    "p2": "We would like to establish strong network with domestic and overseas plant industry.",
+    "p3": "We are planning to grow as a global corporation that maximize customer satisfaction with best prices, highest quality, on-time delivery, and strong supply chain establishment.",
+    "p4": "We will also pursue joint growth through win-win relationship with our clients.",
+    "visionTitle": "Our Vision",
+    "vision": [
+      {
+        "title": "Global Distribution Network",
+        "desc": "Establishment of domestic and foreign branches as a distributor specializing in plant materials. Development of domestic and overseas material distribution channels."
+      },
+      {
+        "title": "Professional Training",
+        "desc": "Training of domestic and foreign professionals and establishment of educational institutions. Training engineers and dispatching and commissioning training to sites in each country."
+      },
+      {
+        "title": "Employee Welfare",
+        "desc": "Promote the self-esteem of executives and employees by creating the best working environment and welfare."
+      },
+      {
+        "title": "Win-Win Partnership",
+        "desc": "Pursue joint win-win development through the formation of the best partnership."
+      }
+    ]
+  },
+  "products": {
+    "title": "Products",
+    "description": "We provide high-quality piping solutions and instrumentation for various industries.",
+    "items": ["Piping Systems", "Instrumentation", "Fabrication Services"]
+  },
+  "progress": {
+    "title": "Business Progress",
+    "subtitle": "Our systematic approach to delivering value",
+    "steps": [
+      {
+        "title": "Inquiry & Consultation",
+        "desc": "Initial client meeting and requirement analysis to understand specific needs."
+      },
+      {
+        "title": "Proposal & Strategy",
+        "desc": "Developing tailored solutions and strategic planning for optimal results."
+      },
+      {
+        "title": "Execution & Development",
+        "desc": "Implementation of the project with rigorous quality control and management."
+      },
+      {
+        "title": "Delivery & Support",
+        "desc": "Final delivery, commissioning, and continuous maintenance support."
+      }
+    ]
+  },
+  "footer": {
+    "address": "Address: 702ho, Pyeongchon K-Bizrium, 445 Heungan-daero, Dongan-gu, Anyang-si, Gyeonggi-do, Korea",
+    "phone": "Phone: 031-8069-5522",
+    "fax": "Fax: 02-123-4568",
+    "copyright": "Copyright © Blueway Co., Ltd. All Rights Reserved."
+  },
+  "organization": {
+    "title": "Organization Chart",
+    "subtitle": "Systematic structure for maximum efficiency and customer satisfaction"
+  }
+}

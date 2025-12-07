@@ -1,0 +1,132 @@
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import BusinessProgress from './BusinessProgress.jsx';
+import Organization from './Organization.jsx';
+import { MapPin, Briefcase, Users } from 'lucide-react';
+
+const About = () => {
+  const { t } = useTranslation();
+  const [activeSubTab, setActiveSubTab] = useState('organization');
+
+  // 탭 메뉴 데이터
+  const subTabs = [
+    { id: 'organization', label: 'Organization', icon: Users },
+    { id: 'business', label: 'Business Process', icon: Briefcase },
+    { id: 'location', label: 'Location', icon: MapPin },
+  ];
+
+  return (
+    <div className="bg-white min-h-screen pb-20">
+      {/* 상단 헤더 섹션 */}
+      <div className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">{t('about.title')}</h2>
+          <div className="max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed">
+            {t('about.description')}
+          </div>
+        </div>
+      </div>
+
+      {/* 서브 탭 메뉴 */}
+      <div className="sticky top-20 z-10 bg-white shadow-sm border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center space-x-4 md:space-x-12 overflow-x-auto">
+            {subTabs.map((tab) => {
+              const Icon = tab.icon;
+              const isActive = activeSubTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveSubTab(tab.id)}
+                  className={`
+                    flex items-center gap-2 py-6 px-2 border-b-4 transition-all duration-300 whitespace-nowrap
+                    ${isActive 
+                      ? 'border-blue-600 text-blue-600 font-bold' 
+                      : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300'}
+                  `}
+                >
+                  <Icon size={20} />
+                  <span className="text-lg">{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* 탭 컨텐츠 영역 */}
+      <div className="min-h-[600px] animate-fade-in">
+        {activeSubTab === 'organization' && (
+          <div className="animate-slide-up">
+            <Organization />
+          </div>
+        )}
+
+        {activeSubTab === 'business' && (
+          <div className="animate-slide-up">
+            <BusinessProgress />
+          </div>
+        )}
+
+        {activeSubTab === 'location' && (
+          <div className="animate-slide-up">
+            <section className="bg-gray-50 py-16">
+              <div className="container mx-auto px-4">
+                <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">Location</h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                  {/* 1. Google Map */}
+                  <div className="bg-white p-4 rounded-xl shadow-md">
+                    <h4 className="text-xl font-semibold mb-4 text-gray-700 flex items-center gap-2">
+                      <span className="text-blue-600">📍</span> Google Map
+                    </h4>
+                    <div className="w-full h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                      <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.266406770836!2d126.9768!3d37.5701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM0JzEyLjQiTiAxMjbCsDU4JzM2LjUiRQ!5e0!3m2!1sen!2skr!4v1600000000000!5m2!1sen!2skr" 
+                        width="100%" 
+                        height="100%" 
+                        style={{ border: 0 }} 
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Google Map"
+                      ></iframe>
+                    </div>
+                  </div>
+
+                  {/* 2. Naver Map */}
+                  <div className="bg-white p-4 rounded-xl shadow-md">
+                    <h4 className="text-xl font-semibold mb-4 text-gray-700 flex items-center gap-2">
+                      <span className="text-green-500">N</span> Naver Map
+                    </h4>
+                    <div className="w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden relative group flex items-center justify-center border border-gray-200">
+                      <iframe 
+                        src="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%96%91%EC%8B%9C%20%EB%8F%99%EC%95%88%EA%B5%AC%20%ED%9D%A5%EC%95%88%EB%8C%80%EB%A1%9C%20445%2C%20702%ED%98%B8(%ED%8F%89%EC%B4%8C%20K-%EB%B9%84%EC%A6%88%EB%A6%AC%EC%9B%80)/address/14134768.4431812,4494182.2995609,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%96%91%EC%8B%9C%20%EB%8F%99%EC%95%88%EA%B5%AC%20%ED%9D%A5%EC%95%88%EB%8C%80%EB%A1%9C%20445?c=15.44,0,0,0,dh&isCorrectAnswer=true8" 
+                        width="100%"
+                        height="100%" 
+                        style={{ border: 0 }} 
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Naver Map"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 텍스트 주소 정보 */}
+                <div className="mt-12 text-center">
+                  <p className="text-xl font-medium text-gray-800">주소 (Address)</p>
+                  <p className="text-gray-600 mt-2">경기도 안양시 동안구 흥안대로 445, 702호(평촌 K-비즈리움)</p>
+                  <p className="text-gray-500 mt-1">702ho, Pyeongchon K-Bizrium, 445 Heungan-daero, Dongan-gu, Anyang-si, Gyeonggi-do, Korea</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default About;
