@@ -1,7 +1,10 @@
 [build]
+  # 빌드 명령어
   command = "npm run build"
+  # 배포할 폴더 (Vite의 기본 빌드 폴더는 dist 입니다)
   publish = "dist"
 
+# SPA 라우팅 문제 해결 (새로고침 시 404 방지)
 [[redirects]]
   from = "/*"
   to = "/index.html"
