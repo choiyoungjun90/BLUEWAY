@@ -28,7 +28,7 @@ const BusinessProgress = () => {
           <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
             {/* 이미지 반응형 처리 */}
             <img 
-              src="src/assets/process.png" 
+              src="/assets/process.png" 
               alt="Business Progress" 
               className="w-full h-auto object-contain mx-auto"
             />

@@ -25,7 +25,7 @@ const Navbar = ({ setActiveTab }) => {
         onClick={() => setActiveTab('home')}
       >
         {/* 이미지는 public/logo/logo.png 에 있어야 함 */}
-        <img src="src/assets/logo/logo.png" alt="Logo" className="h-14 w-14 bg-white rounded-full" />
+        <img src="/assets/logo/logo.png" alt="Logo" className="h-14 w-14 bg-white rounded-full" />
         <h1 className="text-2xl font-bold tracking-wide">BLUEWAY</h1>
       </div>
 
@@ -78,8 +78,8 @@ const Navbar = ({ setActiveTab }) => {
 const HeroSection = () => {
   // 사용할 배경 이미지 목록 (public/assets 폴더에 해당 파일들이 있어야 함)
   const heroImages = [
-    "/src/assets/background1.jpg",   // 기존 이미지
-    "/src/assets/background2.jpg",  // 추가 이미지 1
+    "/assets/background1.jpg",   // 기존 이미지
+    "/assets/background2.jpg",  // 추가 이미지 1
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

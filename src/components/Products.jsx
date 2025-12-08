@@ -16,10 +16,10 @@ const Products = () => {
   // 제품 데이터
   const productsData = {
     piping: [
-      { name: "VALVE", desc: "BALL / GATE / GLOBE / CHECK VALVE", img: "src/assets/item1.png" },
-      { name: "VALVE", desc: "PNEUMATIC VALVE CONTROL VALVE", img: "src/assets/item2.png" },
-      { name: "MOTOR", desc: "CENTRIFUGAL PUMP METERING PUMP MAGNETIC PUMP", img: "src/assets/item3.png" },
-      { name: "PLATE", desc: "CARBON STEEL STAINLESS TITANIUM ALLOY", img: "src/assets/item4.png" },
+      { name: "VALVE", desc: "BALL / GATE / GLOBE / CHECK VALVE", img: "/assets/item1.png" },
+      { name: "VALVE", desc: "PNEUMATIC VALVE CONTROL VALVE", img: "/assets/item2.png" },
+      { name: "MOTOR", desc: "CENTRIFUGAL PUMP METERING PUMP MAGNETIC PUMP", img: "/assets/item3.png" },
+      { name: "PLATE", desc: "CARBON STEEL STAINLESS TITANIUM ALLOY", img: "/assets/item4.png" },
     ],
     instrument: [
       { name: "Pressure Gauges", desc: "High precision pressure monitoring", img: "/assets/product_gauge.jpg" },

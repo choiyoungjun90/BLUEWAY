@@ -23,7 +23,7 @@ const Organization = () => {
           <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
             {/* 이미지 반응형 처리 */}
             <img 
-              src="src/assets/organization.png" 
+              src="/assets/organization.png" 
               alt="Organization Chart" 
               className="w-full h-auto object-contain mx-auto"
             />
