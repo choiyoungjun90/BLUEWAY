@@ -3,12 +3,12 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',  // Netlify 루트 배포에 맞게 변경
+  base: '/', 
   build: {
     outDir: 'dist',
     emptyOutDir: true,
   },
   css: {
-    postcss: './postcss.config.js',
+    postcss: './postcss.config.cjs', // .js -> .cjs 로 변경
   },
 })

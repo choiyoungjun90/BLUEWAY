@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",  // React 컴포넌트 파일 경로
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
