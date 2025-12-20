@@ -13,6 +13,9 @@
     "products": "Products",
     "contact": "Contact Us"
   },
+  "contact": {
+    "description": "Feel free to reach out to us with any inquiries or feedback. We are here to assist you!"
+  },
   "about": {
     "title": "About Us",
     "description": "Providing the best service, BLUEWAY Co. is always with you."
@@ -70,10 +73,23 @@
       }
     ]
   },
+  "supply": {
+    "title": "Supply Status",
+    "description": "Our global delivery and supply status",
+    "tabs": {
+      "summary": "Overall Status"
+    },
+    "table": {
+      "year": "Year",
+      "client": "Client",
+      "project": "Project",
+      "item": "Delivered Items"
+    }
+  },
   "footer": {
     "address": "Address: 702ho, Pyeongchon K-Bizrium, 445 Heungan-daero, Dongan-gu, Anyang-si, Gyeonggi-do, Korea",
-    "phone": "Phone: 031-8069-5522",
-    "fax": "Fax: 02-123-4568",
+    "phone": "Phone: +82-31-8069-5522",
+    "fax": "Fax: +82-31-424-1341",
     "copyright": "Copyright © Blueway Co., Ltd. All Rights Reserved."
   },
   "organization": {

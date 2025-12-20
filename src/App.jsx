@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'; // useEffect 추가 필수
-import { Globe, Menu, ArrowRight } from 'lucide-react';
+import { Globe, Menu } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom'; // React Router 추가
 import Ceo from './components/Ceo.jsx';
 import About from './components/About.jsx';
 import Products from './components/Products.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import Supply from './components/Supply.jsx';
 
-// 네비게이션 바 컴포넌트
-const Navbar = ({ setActiveTab }) => {
+// 네비게이션 바 컴포넌트 (Link로 변경)
+const Navbar = () => {
   const { i18n } = useTranslation();
   const [isLangOpen, setIsLangOpen] = useState(false);
 
@@ -18,23 +20,23 @@ const Navbar = ({ setActiveTab }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-20 px-8 py-6 flex justify-between items-center text-black bg-white">
+    <nav className="fixed top-0 left-0 w-full z-20 px-8 py-6 flex justify-between items-center text-black bg-white shadow-sm">
       {/* 로고 영역 */}
       <div 
-        className="flex items-center gap-2 cursor-pointer" 
-        onClick={() => setActiveTab('home')}
+        className="flex items-center gap-2 cursor-pointer z-30" 
+        onClick={() => window.location.href = '/'}
       >
-        {/* 이미지는 public/logo/logo.png 에 있어야 함 */}
         <img src="/assets/logo/logo.png" alt="Logo" className="h-14 w-14 bg-white rounded-full" />
         <h1 className="text-2xl font-bold tracking-wide">BLUEWAY</h1>
       </div>
 
-      {/* 메뉴 링크 (데스크탑) */}
-      <div className="hidden md:flex gap-8 text-xl font-medium tracking-wide text-gray-800">
-        <button onClick={() => setActiveTab('home')} className="hover:text-gray-400 transition">Home</button>
-        <button onClick={() => setActiveTab('about')} className="hover:text-gray-400 transition">About</button>
-        <button onClick={() => setActiveTab('products')} className="hover:text-gray-400 transition">Products</button>
-        <button onClick={() => setActiveTab('contact')} className="hover:text-gray-400 transition">Contact Us</button>
+      {/* 메뉴 링크 (화면 정중앙 배치) */}
+      <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-8 text-xl font-medium tracking-wide text-gray-800">
+        <Link to="/home" className="hover:text-blue-600 transition">Home</Link>
+        <Link to="/about" className="hover:text-blue-600 transition">About</Link>
+        <Link to="/products" className="hover:text-blue-600 transition">Products</Link>
+        <Link to="/supply" className="hover:text-blue-600 transition">Supply</Link>
+        <Link to="/contact" className="hover:text-blue-600 transition">Contact Us</Link>
       </div>
 
       {/* 우측 아이콘 (언어 설정) */}
@@ -119,7 +121,7 @@ const HeroSection = () => {
           <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
            BLUEWAY
           </h2>
-          <p className="text-gray-300 text-lg md:text-xl font-light mb-8 max-w-lg">
+          <p className="text-gray-300 text-xl md:text-xl font-light mb-8 max-w-lg">
             We are planning to grow as a global corporation that maximize customer satisfaction with best prices, highest quality, on-time delivery, and strong supply chain establishment. 
           </p>
         </div>
@@ -129,68 +131,53 @@ const HeroSection = () => {
   );
 };
 
-// [누락되었던 StatsSection 복구]
-const StatsSection = () => {
-  return (
-    <section className="bg-white py-16 px-8 md:px-16">
-      <div className="container mx-auto text-center">
-        <h3 className="text-3xl font-bold text-gray-800 mb-4">Global Network</h3>
-        <p className="text-gray-600">Connecting businesses worldwide with trust and quality.</p>
-      </div>
-    </section>
-  );
-};
 
-// 메인 앱 컴포넌트
+// 메인 앱 컴포넌트 (Router로 감싸고 Routes 사용)
 export default function AgroLinkPage() {
-  const [activeTab, setActiveTab] = useState('home');
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'home':
-        return (
-          <>
-            <HeroSection />
-            <Ceo />
-            <StatsSection />
-            <Footer />
-          </>
-        );
-      case 'about':
-        return (
-          <div className="pt-24">
-            <About />
-            <Footer />
-          </div>
-        );
-      case 'products':
-        return (
-          <div className="pt-24">
-            <Products />
-            <Footer />
-          </div>
-        );
-      case 'contact':
-        return (
-          <div className="pt-24">
-            <Contact />
-            <Footer />
-          </div>
-        );
-      default:
-        return <HeroSection />;
-    }
-  };
-
   return (
-    <div className="font-sans min-h-screen bg-gray-50">
-      {/* Navbar는 항상 위에 고정, setActiveTab 함수 전달 */}
-      <Navbar setActiveTab={setActiveTab} />
-      
-      {/* 메인 컨텐츠 영역 */}
-      <main>
-        {renderContent()}
-      </main>
-    </div>
+    <Router>
+      <div className="font-sans min-h-screen bg-gray-50">
+        {/* Navbar는 항상 위에 고정 */}
+        <Navbar />
+        
+        {/* 메인 컨텐츠 영역 - Routes로 라우팅 */}
+        <main>
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" replace />} /> {/* 기본 경로를 /home으로 리다이렉트 */}
+            <Route path="/home" element={
+              <>
+                <HeroSection />
+                <Ceo />
+                <Footer />
+              </>
+            } />
+            <Route path="/about" element={
+              <div className="pt-24">
+                <About />
+                <Footer />
+              </div>
+            } />
+            <Route path="/products" element={
+              <div className="pt-24">
+                <Products />
+                <Footer />
+              </div>
+            } />
+            <Route path="/supply" element={
+              <div className="pt-24">
+                <Supply />
+                <Footer />
+              </div>
+            } />
+            <Route path="/contact" element={
+              <div className="pt-24">
+                <Contact />
+                <Footer />
+              </div>
+            } />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }

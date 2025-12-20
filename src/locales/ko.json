@@ -11,7 +11,10 @@
   "tabs": {
     "about": "기업소개",
     "products": "프로덕트",
-    "contact": "컨택어스"
+    "contact": "문의하기"
+  },
+    "contact": {
+    "description": "문의 사항이 있으시면 언제든지 연락해 주세요. 저희가 도와드리겠습니다!"
   },
   "about": {
     "title": "회사 소개",
@@ -70,10 +73,23 @@
       }
     ]
   },
+  "supply": {
+    "title": "공급 현황",
+    "description": "글로벌 납품 및 공급 현황",
+    "tabs": {
+      "summary": "전체 현황"
+    },
+    "table": {
+      "year": "연도",
+      "client": "업체명",
+      "project": "현장",
+      "item": "납품 품목"
+    }
+  },
   "footer": {
     "address": "주소: 경기도 안양시 동안구 흥안대로 445, 702호(평촌 K-비즈리움)",
     "phone": "전화: 031-8069-5522",
-    "fax": "팩스: 02-123-4568",
+    "fax": "FAX: 031-424-1341",
     "copyright": "Copyright © Blueway Co., Ltd. All Rights Reserved."
   },
   "organization": {

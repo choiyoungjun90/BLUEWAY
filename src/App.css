@@ -1,8 +1,14 @@
+/* Google Fonts 임포트 - Montserrat (신뢰감 있고 이쁜 폰트) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  /* Montserrat 폰트 적용 */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
 .logo {

@@ -82,7 +82,7 @@ const About = () => {
                     </h4>
                     <div className="w-full h-[400px] bg-gray-200 rounded-lg overflow-hidden">
                       <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.266406770836!2d126.9768!3d37.5701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM0JzEyLjQiTiAxMjbCsDU4JzM2LjUiRQ!5e0!3m2!1sen!2skr!4v1600000000000!5m2!1sen!2skr" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.818579742487!2d126.97215711228858!3d37.39412247196735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5e3f9d6e7c17%3A0x16c0c2950f8f3ee2!2z6rK96riw64-EIOyViOyWkeyLnCDrj5nslYjqtawg7Z2l7JWI64yA66GcIDQ0NQ!5e0!3m2!1sko!2skr!4v1765713020984!5m2!1sko!2skr"
                         width="100%" 
                         height="100%" 
                         style={{ border: 0 }} 
@@ -101,7 +101,7 @@ const About = () => {
                     </h4>
                     <div className="w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden relative group flex items-center justify-center border border-gray-200">
                       <iframe 
-                        src="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%96%91%EC%8B%9C%20%EB%8F%99%EC%95%88%EA%B5%AC%20%ED%9D%A5%EC%95%88%EB%8C%80%EB%A1%9C%20445%2C%20702%ED%98%B8(%ED%8F%89%EC%B4%8C%20K-%EB%B9%84%EC%A6%88%EB%A6%AC%EC%9B%80)/address/14134768.4431812,4494182.2995609,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%96%91%EC%8B%9C%20%EB%8F%99%EC%95%88%EA%B5%AC%20%ED%9D%A5%EC%95%88%EB%8C%80%EB%A1%9C%20445?c=15.44,0,0,0,dh&isCorrectAnswer=true8" 
+                        src="https://naver.me/G8hnmkVr"
                         width="100%"
                         height="100%" 
                         style={{ border: 0 }} 
