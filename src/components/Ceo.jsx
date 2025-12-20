@@ -21,7 +21,7 @@ const Ceo = () => {
         </div>
 
         {/* Message Content */}
-        <div className="max-w-5xl hover:shadow-2xl hover:scale-125 duration-300 hover:cursor-pointer mx-auto bg-white p-8 md:p-14 rounded-2xl shadow-xl border border-gray-100 mb-24 relative overflow-hidden">
+        <div className="max-w-5xl hover:shadow-2xl hover:scale-110 duration-300 hover:cursor-pointer mx-auto bg-white p-8 md:p-14 rounded-2xl shadow-xl border border-gray-100 mb-24 relative overflow-hidden">
           {/* 장식용 배경 요소 */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-10 -mt-10 opacity-50"></div>
           
@@ -54,7 +54,7 @@ const Ceo = () => {
               return (
                 <div 
                   key={index} 
-                  className="group bg-white p-8 rounded-xl shadow-md hover:shadow-2xl hover:scale-125 duration-300 hover:cursor-pointer transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 hover:-translate-y-2 flex flex-col md:flex-row gap-6 items-start "
+                  className="group bg-white p-8 rounded-xl shadow-md hover:shadow-2xl hover:scale-110 duration-300 hover:cursor-pointer transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 hover:-translate-y-2 flex flex-col md:flex-row gap-6 items-start "
                 >
                   {/* Icon Box */}
                   <div className="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">

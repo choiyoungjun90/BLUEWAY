@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'; // useEffect 추가 필수
-import { Globe, Menu } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react'; // X 아이콘 추가
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom'; // React Router 추가
 import Ceo from './components/Ceo.jsx';
@@ -13,6 +13,7 @@ import Supply from './components/Supply.jsx';
 const Navbar = () => {
   const { i18n } = useTranslation();
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // 모바일 메뉴 상태 추가
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
@@ -68,10 +69,22 @@ const Navbar = () => {
           )}
         </div>
 
-        <button className="md:hidden">
-          <Menu size={24} />
+        {/* 모바일 토글 버튼 */}
+        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
+      {/* 모바일 메뉴 리스트 */}
+      {isMenuOpen && (
+        <div className="flex absolute top-full left-0 w-full bg-white shadow-xl md:hidden flex flex-col border-t border-gray-100">
+          <Link to="/home" onClick={() => setIsMenuOpen(false)} className="px-5 py-5 text-m font-semibold hover:bg-gray-50 hover:text-blue-600 transition border-b border-gray-50">Home</Link>
+          <Link to="/about" onClick={() => setIsMenuOpen(false)} className="px-5 py-5 text-m font-semibold hover:bg-gray-50 hover:text-blue-600 transition border-b border-gray-50">About</Link>
+          <Link to="/products" onClick={() => setIsMenuOpen(false)} className="px-5 py-5 text-m font-semibold hover:bg-gray-50 hover:text-blue-600 transition border-b border-gray-50">Products</Link>
+          <Link to="/supply" onClick={() => setIsMenuOpen(false)} className="px-5 py-5 text-m font-semibold hover:bg-gray-50 hover:text-blue-600 transition border-b border-gray-50">Supply</Link>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="px-5 py-5 text-m font-semibold hover:bg-gray-50 hover:text-blue-600 transition border-b border-gray-50">Contact Us</Link>
+        </div>
+      )}
     </nav>
   );
 };

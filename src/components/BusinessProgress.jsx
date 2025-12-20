@@ -57,7 +57,7 @@ const BusinessProgress = () => {
               const Icon = icons[index];
               return (
                 <div key={index} className="relative group">
-                  <div className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 flex flex-col items-center text-center relative z-10 h-full">
+                  <div className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 flex flex-col items-center text-center relative z-auto h-full">
                     
                     {/* 단계 번호 배지 */}
                     <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-sm font-bold px-4 py-1 rounded-full shadow-lg shadow-blue-200">
@@ -78,7 +78,7 @@ const BusinessProgress = () => {
                     </p>
 
                     {/* 배경 장식 숫자 */}
-                    <span className="absolute bottom-6 right-8 text-7xl font-black text-gray-50 group-hover:text-blue-50/50 transition-colors -z-10 select-none">
+                    <span className="absolute bottom-6 right-8 text-7xl font-black text-gray-50 group-hover:text-blue-50/50 transition-colors -z-auto select-none">
                       {index + 1}
                     </span>
                   </div>
