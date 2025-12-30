@@ -50,7 +50,7 @@ const Supply = () => {
       // icheon Hynix 공급 실적
       { name: "Icheon Hynix", desc: "Pipe", img: "/assets/supply/2025/hynix/item1.png" },
       { name: "Icheon Hynix", desc: "배관자재 입고", img: "/assets/supply/2025/hynix/item2.png" },
-      { name: "Icheon Hynix", desc: "Fitting", img: "/assets/supply/2025/hynix/item3.png" },
+      { name: "Icheon Hynix", desc: "Fitting", img: "/assets/supply/2025/hynix/item3.png", rotate: true },
       { name: "Icheon Hynix", desc: "배관자재 입고", img: "/assets/supply/2025/hynix/item4.png" },
     ],
     2024: [
@@ -87,15 +87,20 @@ const Supply = () => {
       { name: "Icheon Hynix", desc: "etc", img: "/assets/supply/2022/hynix/item6.png" },
       { name: "Icheon Hynix", desc: "etc", img: "/assets/supply/2022/hynix/item7.png" },
       { name: "Icheon Hynix", desc: "E-Jector", img: "/assets/supply/2022/hynix/item8.png" },
-      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item9.png" },
-      { name: "Icheon Hynix", desc: "HDPE PIPE", img: "/assets/supply/2022/hynix/item10.png" },
-      { name: "Icheon Hynix", desc: "FLANGE", img: "/assets/supply/2022/hynix/item11.png" },
-      { name: "Icheon Hynix", desc: "Cable Tray", img: "/assets/supply/2022/hynix/item12.png" },
-      { name: "Icheon Hynix", desc: "E-Jector", img: "/assets/supply/2022/hynix/item13.png" },
+      // hynix ACF
+      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item9.png", rotate: true },
+      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item10.png", rotate: true },
+      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item11.png" },
+      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item12.png", rotate: true },
+      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item13.png" },
+      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item14.png" },
+      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item15.png" },
+      { name: "Icheon Hynix", desc: "ACF", img: "/assets/supply/2022/hynix/item16.png" },
     ],
     before: [
       // 2021 여주
       { name: "Yeoju, Korea", desc: "Ball V/V", img: "/assets/supply/old/item1.png" },
+      { name: "Yeoju, Korea", desc: "Ball V/V", img: "/assets/supply/old/item1_2.png" },
       // 2020 Taiwan
       { name: "Taiwan", desc: "Diaphragm Valve", img: "/assets/supply/old/item2.png" },
       { name: "Taiwan", desc: "Diaphragm Valve", img: "/assets/supply/old/item3.png" },
@@ -106,25 +111,52 @@ const Supply = () => {
       { name: "Goseong, Korea", desc: "Diaphragm V/v", img: "/assets/supply/old/item7.png" },
       // 2020 하이닉스
       { name: "Icheon Hynix", desc: "Butterfly V/V", img: "/assets/supply/old/item8.png" },
+      { name: "Icheon Hynix", desc: "PIPE", img: "/assets/supply/old/item8_2.png" },
       { name: "Icheon Hynix", desc: "Fitting", img: "/assets/supply/old/item9.png" },
-      { name: "Icheon Hynix", desc: "PE Spool", img: "/assets/supply/old/item10.png" },
+      { name: "Icheon Hynix", desc: "PE Spool", img: "/assets/supply/old/item10.png", rotate: true },
       // Saudi
       { name: "Saudi", desc: "Valve", img: "/assets/supply/old/item11.png" },
       { name: "Saudi", desc: "Valve", img: "/assets/supply/old/item12.png" },
       // 2019 고성
       { name: "Goseong, Korea", desc: "Ball V/V", img: "/assets/supply/old/item13.png" },
+      { name: "Goseong, Korea", desc: "Ceramic Ball V/V", img: "/assets/supply/old/item13_2.png" },
+      { name: "Goseong, Korea", desc: "Ceramic Ball V/V", img: "/assets/supply/old/item13_3.png" },
+      { name: "Goseong, Korea", desc: "Pneumatic Control V/V", img: "/assets/supply/old/item13_4.png" },
       { name: "Goseong, Korea", desc: "Ball V/V", img: "/assets/supply/old/item14.png" },
-      // 2019 Saudi
+      { name: "Goseong, Korea", desc: "Ball V/V", img: "/assets/supply/old/item14_2.png" },
+      // 2019 Saudi MARAFIQ
       { name: "Saudi", desc: "Diaphragm V/V", img: "/assets/supply/old/item15.png" },
-      { name: "Saudi", desc: "Diaphragm V/V", img: "/assets/supply/old/item16.png" },
+      { name: "Saudi", desc: "Diaphragm V/V", img: "/assets/supply/old/item15_2.png" },
       // 2019 Ulsan
-      { name: "Ulsan, Korea", desc: "Diaphragm V/V", img: "/assets/supply/old/item17.png" },
+      { name: "Ulsan, Korea", desc: "Pneumatic Valve", img: "/assets/supply/old/item16.png" },
+      { name: "Ulsan, Korea", desc: "Pneumatic Valve", img: "/assets/supply/old/item16_2.png" },
+      { name: "Ulsan, Korea", desc: "Casting Valve", img: "/assets/supply/old/item17.png" },
+      { name: "Ulsan, Korea", desc: "Casting Valve", img: "/assets/supply/old/item17_2.png" },
       // 2019 Turkmenistan 
-      { name: "Turkmenistan", desc: "Diaphragm V/V", img: "/assets/supply/old/item18.png" },
-      // 2018 울진
-      { name: "Uljin, Korea", desc: "Diaphragm V/V", img: "/assets/supply/old/item19.png" },
+      { name: "Turkmenistan", desc: "Butterfly Valve", img: "/assets/supply/old/item18.png" },
+      { name: "Turkmenistan", desc: "Butterfly Valve", img: "/assets/supply/old/item18_2.png" },
+      // 2018 OMAN
+      { name: "OMAN", desc: "Diaphragm Valve", img: "/assets/supply/old/item21.png" },
+      { name: "OMAN", desc: "Diaphragm Valve", img: "/assets/supply/old/item22.png" },
+      // 2018 울진 신한울
+      { name: "Uljin, Korea", desc: "Pneumatic Valve", img: "/assets/supply/old/item19.png", rotate: true },
+      { name: "Uljin, Korea", desc: "Pneumatic Valve", img: "/assets/supply/old/item19_2.png", rotate: true },
+      // 2018 신고리
+      { name: "Shin-Kori, Korea", desc: "Pneumatic Valve", img: "/assets/supply/old/item23.png" },
+      { name: "Shin-Kori, Korea", desc: "Pneumatic Valve", img: "/assets/supply/old/item24.png" },
+      { name: "Shin-Kori, Korea", desc: "Strainer", img: "/assets/supply/old/item25.png" },
+      { name: "Shin-Kori, Korea", desc: "Strainer", img: "/assets/supply/old/item26.png" },
       // 2017 포천
-      { name: "Pocheon, Korea", desc: "Diaphragm V/V", img: "/assets/supply/old/item20.png" },
+      { name: "Pocheon, Korea", desc: "Pneumatic V/V", img: "/assets/supply/old/item27.png" },
+      { name: "Pocheon, Korea", desc: "Pneumatic V/V", img: "/assets/supply/old/item28.png" },
+      { name: "Pocheon, Korea", desc: "Pneumatic V/V", img: "/assets/supply/old/item29.png" },
+      { name: "Pocheon, Korea", desc: "Pneumatic V/V", img: "/assets/supply/old/item30.png" },
+      // 2017 울산
+      { name: "Ulsan, Korea", desc: "Diaphragm Valve", img: "/assets/supply/old/item31.png" },
+      { name: "Ulsan, Korea", desc: "Diaphragm Valve", img: "/assets/supply/old/item32.png" },
+      // 2017 Uzbekistan
+      { name: "Uzbekistan", desc: "Valve", img: "/assets/supply/old/item33.png" },
+      { name: "Uzbekistan", desc: "Valve", img: "/assets/supply/old/item34.png" },
     ],
   };
 
@@ -198,8 +230,10 @@ const Supply = () => {
           <div className="animate-fade-in space-y-16">
             {Object.entries(
               (photoRecords[activeTab] || []).reduce((acc, item) => {
-                if (!acc[item.name]) acc[item.name] = [];
-                acc[item.name].push(item);
+                // 'Korea'가 포함된 명칭은 'Korea'로 통합 그룹화
+                const groupName = item.name.includes('Korea') ? 'Korea' : item.name;
+                if (!acc[groupName]) acc[groupName] = [];
+                acc[groupName].push(item);
                 return acc;
               }, {})
             ).map(([clientName, items]) => (
@@ -218,7 +252,12 @@ const Supply = () => {
                         <img 
                           src={item.img} 
                           alt={item.desc} 
-                          className="w-full h-full object-cover relative z-auto transition-transform duration-500 group-hover:scale-110" 
+                          loading="lazy"
+                          className={`w-full h-full relative z-auto transition-transform duration-500 group-hover:scale-110 ${
+                            item.rotate 
+                            ? 'rotate-[270deg] scale-[1.4] object-contain' 
+                            : 'object-cover'
+                          }`} 
                           onError={(e) => e.target.style.display = 'none'}
                         />
                       </div>

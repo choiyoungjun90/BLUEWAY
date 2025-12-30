@@ -118,14 +118,14 @@ const Products = () => {
               <div className="p-8">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                   {productsData.fabrication.slice(2).map((item, index) => (
-                    <div key={index} className="group/item relative aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden border border-gray-200">
+                    <div key={index} className="group/item relative aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
                       <img 
                         src={item.img} 
                         alt={`Tank & Vessel ${index + 1}`} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-110"
+                        className="w-[80%] h-[80%] object-contain transition-transform duration-500 group-hover/item:scale-110"
                       />
                       <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <div className="text-white font-semibold text-lg">{`Tank & Vessel ${index + 1}`}</div>
+                        <div className="text-white font-semibold text-lg">{``}</div>
                       </div>
                     </div>
                   ))}

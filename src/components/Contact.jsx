@@ -7,7 +7,8 @@ import { Mail, Phone, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-rea
 function Contact() {
   const { t } = useTranslation();
   const form = useRef();
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  // 1. state 초기값 변경 (name -> from_name, email -> reply_to)
+  const [formData, setFormData] = useState({ from_name: '', reply_to: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [alert, setAlert] = useState({ show: false, type: '', message: '' });
 
@@ -27,11 +28,17 @@ function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    emailjs.sendForm(
+    // sendForm 대신 send 사용 (데이터를 직접 객체로 전송)
+    emailjs.send(
       'service_ubxvcqi',
       'template_krzrvki',
-      form.current, 
-      'rY8k-_EBeuJ7jYP2O',
+      {
+        from_name: formData.from_name,
+        reply_to: formData.reply_to,
+        message: formData.message,
+        // to_name: 'Blueway 담당자',
+      },
+      'rY8k-_EBeuJ7jYP2O'  // Public Key
     )
     .then(() => {
       setAlert({
@@ -39,13 +46,14 @@ function Contact() {
         type: 'success',
         message: 'Your message has been sent successfully!'
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ from_name: '', reply_to: '', message: '' });
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error('EmailJS Error:', error);
       setAlert({
         show: true,
         type: 'error',
-        message: t('contact.error') || 'Failed to send message. Please try again.'
+        message: `전송 실패: ${error.text} (Status: ${error.status})`
       });
     })
     .finally(() => {
@@ -118,7 +126,11 @@ function Contact() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
                     <input 
-                      type="text" name="name" value={formData.name} onChange={handleChange} required
+                      type="text" 
+                      name="from_name"  // 3. name 속성 변경 (중요)
+                      value={formData.from_name} // state 연결 변경
+                      onChange={handleChange} 
+                      required
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all"
                       placeholder="John Doe"
                     />
@@ -126,7 +138,11 @@ function Contact() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
                     <input 
-                      type="email" name="email" value={formData.email} onChange={handleChange} required
+                      type="email" 
+                      name="reply_to"   // 4. name 속성 변경 (중요)
+                      value={formData.reply_to} // state 연결 변경
+                      onChange={handleChange} 
+                      required
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all"
                       placeholder="john@example.com"
                     />
@@ -134,7 +150,10 @@ function Contact() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
                     <textarea 
-                      name="message" value={formData.message} onChange={handleChange} required
+                      name="message" 
+                      value={formData.message} 
+                      onChange={handleChange} 
+                      required
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl h-40 focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all resize-none"
                       placeholder="How can we help you?"
                     ></textarea>
